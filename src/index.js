@@ -1,12 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import a couple of object from react modules
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root') );
+const element = <h1>Hello World</h1>;
+// this element will compiled by bible to :
+// React.createElement
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();
+console.log(element);
+// result =
+// Object
+// $$typeof: Symbol(react.element)
+// type: "h1"
+// key: null
+// ref: null
+// props: {children: "Hello World"}
+// _owner: null
+// _store: {validated: false}
+// _self: null
+// _source: {fileName: "/var/www/html/coba-react/src/index.js", lineNumber: 5, columnNumber: 17}
+// __proto__: Object
+
