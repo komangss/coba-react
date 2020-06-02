@@ -24,10 +24,14 @@ class Counter extends Component {
     // sometimes we dont want an extra div that's not doing anything here
     // in that case, we can use React.Fragment
     return (
-        // in between the curly braces, we can add any valid of javascript expressions
+      // in between the curly braces, we can add any valid of javascript expressions
+      
+      // i want add class attribute to the span
+      // we cant use class='' because 'class' is avaliable in javascript // see class Counter on top
+      // so, instead use class, we have className='' // remember styling in JS DOM
         <div>
-          <span>{this.formatCount()}</span>
-          <button>Increment</button>
+          <span className='badge badge-primary m-2' >{this.formatCount()}</span>
+          <button className='btn btn-secondary btn-sm'>Increment</button>
         </div>
       );
   }
