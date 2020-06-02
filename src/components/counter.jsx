@@ -12,6 +12,11 @@ class Counter extends Component {
     count: 0
   };
   
+  styles = {
+    fontSize: 10, // react will automaticly convert this to '10px'
+    fontWeight: 'bold'
+  }
+
   render() {
     // return ( <h1>Hello World</h1> <button>Increment</button> ); // this will failed because in react we cannot return more than 1 component
     // so the solution is wrap it to one div / other element
@@ -29,8 +34,11 @@ class Counter extends Component {
       // i want add class attribute to the span
       // we cant use class='' because 'class' is avaliable in javascript // see class Counter on top
       // so, instead use class, we have className='' // remember styling in JS DOM
+
+      // now i want costum style in this element
+      // in jsx we have style='' attribute
         <div>
-          <span className='badge badge-primary m-2' >{this.formatCount()}</span>
+          <span style={this.styles} className='badge badge-primary m-2' >{this.formatCount()}</span>
           <button className='btn btn-secondary btn-sm'>Increment</button>
         </div>
       );
