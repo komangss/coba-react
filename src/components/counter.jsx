@@ -4,11 +4,18 @@ import React, { Component } from "react";
 class Counter extends Component {
   state = {
     count: 0,
+    bobo: ['bobo1']
   };
 
-  handleIncrement = () => { // arrow function dont rebind this keyword.
-    // so we can see using arrow function is cleaner and simpler than adding custom constructor and re binding every event handler manualy
-    console.log(this);
+  handleIncrement = () => {
+    // this.state.count++; // this not gonna work // the value of count property is being incremented
+    // but react is not aware of that, thats why is not updating the view.
+
+    // to solve this problem is we call method setState on base Component on React
+    // this method tell react, that we are updating the state, then it will figured out what part of state is changed. 
+    // and based on it will bring the dom and sync to the real dom
+    this.setState({count: this.state.count+1});
+    
   }
 
   render() {
