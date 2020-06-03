@@ -3,17 +3,10 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
-    bobo: ['bobo1']
+    count: 0
   };
 
   handleIncrement = () => {
-    // this.state.count++; // this not gonna work // the value of count property is being incremented
-    // but react is not aware of that, thats why is not updating the view.
-
-    // to solve this problem is we call method setState on base Component on React
-    // this method tell react, that we are updating the state, then it will figured out what part of state is changed. 
-    // and based on it will bring the dom and sync to the real dom
     this.setState({count: this.state.count+1});
     
   }
@@ -21,6 +14,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
+        {/* only this span element is updated, because in react virtual dom and real dom compared to other */}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
       </div>
