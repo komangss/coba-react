@@ -7,7 +7,27 @@ class Counter extends Component {
   };
 
   handleIncrement() {
-    console.log('Increment Button Clicked!');
+    // console.log(this.state.count); // in here we cant log the state count
+    // because this is undefined
+
+    // so the solution is bind method // see in constructor
+    console.log(this);
+    
+  }
+
+  constructor() {
+    // console.log(this); // error because we must call the constructor in parent class with super()
+    super();
+    // console.log(this); // result is Counter object
+    
+    // so this perfect opurtunity to use bind method
+    // earlier u learn, that function in javascript are object, so they have property and method
+    // one of them method is bind() method. and with this method we can set value of this
+    // this method will return a new instance of the handleIncrement function and in that function... this is always refreshing the current counter object, so no matter function  that called , this is not gonna change
+    // so this function return a new function, we can get function and reset handleIncrement
+    this.handleIncrement = this.handleIncrement.bind(this);
+
+    
   }
 
   render() {
