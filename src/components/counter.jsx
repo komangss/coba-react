@@ -4,21 +4,29 @@ import React, { Component } from "react";
 class Counter extends Component {
   state = {
     count: 0,
-    tags: ["tag1", "tag2", "tag3"],
+    tags: [],
   };
+
+  renderTags() {
+    if (this.state.tags.length === 0) return <p>There are no tags!</p>;
+
+    return (
+      <ul>
+        {this.state.tags.map((
+          tag // each tags -> tag
+        ) => (
+          <li key={tag}>{tag}</li> // in react we need a key attribute in looping
+          // in real world application, key i usually an id
+        ))}
+      </ul>
+    );
+  }
 
   render() {
     return (
       <div>
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-secondary btn-sm">Increment</button>
-
-        <ul>
-          {this.state.tags.map((tag) => ( // each tags -> tag
-            <li key={ tag }>{ tag }</li> // in react we need a key attribute in looping
-            // in real world application, key i usually an id
-          ))}
-        </ul>
+        {this.state.tags.length === 0 && "Please create a tags"}
+        {this.renderTags()}
       </div>
     );
   }
