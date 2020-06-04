@@ -6,17 +6,20 @@ class Counter extends Component {
     count: 0
   };
 
-  handleIncrement = () => {
+  handleIncrement = (product) => {
+    console.log(product);
+    
     this.setState({count: this.state.count+1});
     
-  }
+  };
 
   render() {
     return (
       <div>
         {/* only this span element is updated, because in react virtual dom and real dom compared to other */}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+        {/* we cant pass handle increment. so, we use arrow function to call handleIncrement */}
+        <button onClick={ () => this.handleIncrement(product)} className="btn btn-secondary btn-sm">Increment</button> 
       </div>
     );
   }
