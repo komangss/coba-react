@@ -11,13 +11,8 @@ class Counter extends Component {
   };
 
   render() {
-    // every react component has a property called props // and this is basicly a plain js object, that includes all the attributes that we set in Counters Component
-    // key will be not part of that because key special attribute for unqiuely identified component
-    console.log("props: ", this.props);
-
     return (
       <div>
-        {this.props.children}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={this.handleIncrement}

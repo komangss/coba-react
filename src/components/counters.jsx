@@ -16,9 +16,7 @@ class Counters extends Component {
       <div>
         {/* i want pass value to child component, so any attribute except 'key' attribute, can used on child component and take it with props keyword */}
         {this.state.counters.map((counter) => (
-          <Counter key={counter.id} value={counter.value}>
-            <h4>Counter#{counter.id}</h4>
-          </Counter>
+          <Counter key={counter.id} value={counter.value} />
         ))}
       </div>
     );
