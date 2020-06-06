@@ -5,8 +5,15 @@ class Counter extends Component {
   state = {
     value: this.props.value,
   };
-
+  
   handleIncrement = () => {
+    // props includes data that we give into Component
+    // state includes data thats local private to that component.
+    // so other component cannot access that state
+    // state is local in internal to that component
+    this.props.value = 0;
+    // error : TypeError: Cannot assign to read only property 'value' of object '
+    // So react not allowed you to change any property of cross object.
     this.setState({ value: this.state.value + 1 });
   };
 
