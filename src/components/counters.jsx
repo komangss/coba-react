@@ -11,12 +11,18 @@ class Counters extends Component {
     ],
   };
 
+  // create a variable to handle onClick button on
+  // child component
+  handleDelete = () => {
+    console.log('Event Handler Called');
+  }
+
   render() {
     return (
       <div>
         {/* i want pass value to child component, so any attribute except 'key' attribute, can used on child component and take it with props keyword */}
         {this.state.counters.map((counter) => (
-          <Counter key={counter.id} value={counter.value} />
+          <Counter key={counter.id} value={counter.value} onDelete={ this.handleDelete } />
         ))}
       </div>
     );
