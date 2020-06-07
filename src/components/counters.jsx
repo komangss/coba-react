@@ -21,12 +21,29 @@ class Counters extends Component {
     this.setState({ counters });
   };
 
+  handleReset = () => {
+    const counters = this.state.counters.map((c) => {
+      c.value = 0;
+      return c;
+    });
+    // this not gonna change in child components.
+    // because we cannot access and update the child counters state
+    // so, to handle thats problem we need single source of truth in our
+    // child component, Single source of truth is using counters state in parent 
+    this.setState({ counters });
+  };
+
   render() {
     return (
       <div>
-        {/* i want pass value to child component, so any attribute except 'key' attribute, can used on child component and take it with props keyword */}
+        <button
+          className="btn btn-primary btn-sm m-2"
+          onClick={this.handleReset}
+        >
+          Reset
+        </button>
+
         {this.state.counters.map((counter) => (
-          // instead of using the 2 attribute (value, id), we can pass counter object itself
           <Counter
             key={counter.id}
             onDelete={this.handleDelete}
