@@ -1,4 +1,3 @@
-// use shortcut imrc to import react Component from react
 import React, { Component } from "react";
 
 class Counter extends Component {

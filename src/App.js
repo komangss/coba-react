@@ -3,7 +3,6 @@ import Counters from "./components/counters";
 import NavBar from "./components/NavBar";
 
 class App extends Component {
-  // state = {  }
   render() {
     return (
       <React.Fragment>
