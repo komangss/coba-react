@@ -29,7 +29,17 @@ class Counters extends Component {
     // this not gonna change in child components.
     // because we cannot access and update the child counters state
     // so, to handle thats problem we need single source of truth in our
-    // child component, Single source of truth is using counters state in parent 
+    // child component, Single source of truth is using counters state in parent
+    this.setState({ counters });
+  };
+
+  handleIncrement = (counter) => {
+    // console.log(counter);
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value++;
+    // console.log(this.state.counters[0]);
     this.setState({ counters });
   };
 
@@ -47,6 +57,7 @@ class Counters extends Component {
           <Counter
             key={counter.id}
             onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
             counter={counter}
           />
         ))}
