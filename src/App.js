@@ -35,6 +35,8 @@ class App extends Component {
   };
 
   render() {
+    console.log("App Rendered");
+    
     return (
       <React.Fragment>
         <NavBar
@@ -51,6 +53,39 @@ class App extends Component {
       </React.Fragment>
     );
   }
+  
+  // this needed for ajax call
+  componentDidMount() {
+    console.log("App Mounted");
+  }
 }
 
 export default App;
+
+// import React, { Component } from "react";
+// class App extends Component {
+//   state = {
+//     p: "p"
+//   };
+
+//   constructor(props) {
+//     // to run constructor, must call super
+//     super(props);
+
+//     console.log("App JS - Contstructor called");
+//     console.log(this.props);
+    
+//   }
+
+//   render() {
+//     console.log("App JS - render called");
+//     return <div></div>
+//   }
+
+//   // used to do ajax call
+//   componentDidMount() {
+//     console.log("App JS - ComponentDidMount called"); 
+//   }
+// }
+
+// export default App;
