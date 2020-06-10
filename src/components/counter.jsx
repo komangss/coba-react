@@ -10,6 +10,12 @@ class Counter extends Component {
       // Ajax call and get new data from server
     }
   }
+
+  // work when we delete one of the counter
+  componentWillUnmount() {
+    console.log("Counter Unmount");
+  }
+  
   render() {
     console.log("Counter Rendered");
 
