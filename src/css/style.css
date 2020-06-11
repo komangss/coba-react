@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    float: left;
+    clear: both;
+    width: 20%;
+}
+
+.sidebar {
+    height: 720px;
+    background-color: red;
+}
+
+main {
+    float: left;
+    width: 80%;
+}
+
+.content {
+    height: 720px;
+    background-color: blueviolet;
+}
